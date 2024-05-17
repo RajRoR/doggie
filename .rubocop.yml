@@ -1,0 +1,6 @@
+AllCops:
+  SuggestExtensions: false
+  NewCops: enable
+
+Metrics/BlockLength:
+  AllowedMethods: ['describe', 'context']
