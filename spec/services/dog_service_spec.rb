@@ -27,4 +27,22 @@ describe DogService do
       expect(dog_service.call['message']).to match(%r{https://images.dog.ceo/breeds/#{breed}/.*\.jpg})
     end
   end
+
+  context 'when breed name is invalid' do
+    let(:breed) { 'invalid_breed' }
+    let(:body)  do
+      {
+        message: 'Breed not found (master breed does not exist)',
+        status: 'error'
+      }
+    end
+
+    it 'returns error' do
+      expect(dog_service.call['status']).to eq('error')
+    end
+
+    it 'returns error message' do
+      expect(dog_service.call['message']).to eq('Breed not found (master breed does not exist)')
+    end
+  end
 end
