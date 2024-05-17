@@ -1,0 +1,16 @@
+<div class="w-1/2 align-center">
+  <div class="max-w-sm rounded overflow-hidden shadow-lg">
+    <%= image_tag 'dog-couple', alt: 'Dog Couple' %>
+    <div class="px-6 py-4">
+      <%= form_tag(:dogs_search, class: 'w-full max-w-sm') do %>
+        <div class='flex items-center border-b border-teal-500 py-2'>
+          <%= text_field_tag :breed, '', placeholder: 'Enter a breed', class: 'appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none', 'aria-label': 'Breed' %>
+          <%= button_tag 'Surprise Me!', class: 'flex-shrink-0 bg-teal-500 hover:bg-teal-700 border-teal-500 hover:border-teal-700 text-sm border-4 text-white py-1 px-2 rounded' %>
+        </div>
+      <% end %>
+      <p class="text-gray-700 text-base mt-8 text-center">
+        Enter a breed name and let us surprise you! 🐶 🦴 🐾
+      </p>
+    </div>
+  </div>
+</div>
