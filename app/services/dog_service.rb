@@ -21,9 +21,17 @@ class DogService
   # @option opts [String] :status The response status
   # @option opts [String] :message The response message
   def call
-    uri = URI("#{BASE_URL}/breed/#{breed}/images/random")
+    uri = URI("#{BASE_URL}/breed/#{breed_to_url}/images/random")
     res = Net::HTTP.get_response(uri)
 
     JSON.parse(res.body)
+  end
+
+  private
+
+  # @example When `breed="Shepherd Australian"`
+  #   breed_to_url #=> "australian/shepherd"
+  def breed_to_url
+    breed.split.reverse.join('/')
   end
 end
