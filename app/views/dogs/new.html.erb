@@ -4,18 +4,21 @@
       <%= image_tag 'dog-couple', alt: 'Dog Couple', class: 'h-full' %>
     </div>
     <div class="px-6 py-4 h-1/5">
-      <%= form_with(url: :dogs_fetch, method: :get, data: { turbo_frame: 'surprise' },
-                    class: 'w-full max-w-full') do |f| %>
+      <%= form_with(url: :dogs_fetch, method: :get, class: 'w-full max-w-full') do |f| %>
         <div class='flex items-center border-b border-teal-500 py-2'>
-          <%= f.text_field :breed, autofocus: true, required: true, placeholder: 'Enter a breed',
+          <%= f.hidden_field :format, value: :turbo_stream %>
+          <%= f.text_field :breed, autofocus: true, required: true, placeholder: 'Enter a breed', 'aria-label': 'Breed',
                            class: 'appearance-none bg-transparent border-none outline-none w-full text-gray-700
-                                    mr-3 py-1 px-2 leading-tight focus:outline-none', 'aria-label': 'Breed' %>
+                                    mr-3 py-1 px-2 leading-tight focus:outline-none font-mono focus:ring-transparent' %>
           <%= f.submit 'Surprise Me!', class: 'flex-shrink-0 bg-teal-500 hover:bg-teal-700 border-teal-500
-                                                hover:border-teal-700 text-sm border-4 text-white py-1 px-2 rounded' %>
+                                                hover:cursor-pointer hover:border-teal-700 text-sm border-4 text-white
+                                                py-1 px-2 rounded' %>
         </div>
       <% end %>
       <p class="text-gray-700 text-base mt-3 text-center">
-        Enter a breed name and let us surprise you! 🐶 🦴 🐾
+        <%= turbo_frame_tag 'message' do %>
+          Enter a breed name and let us surprise you! 🐶 🦴 🐾
+        <% end %>
       </p>
     </div>
   </div>

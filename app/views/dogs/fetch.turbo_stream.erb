@@ -1,0 +1,4 @@
+<%= turbo_stream.update(:surprise, partial: 'surprise',
+                        locals: { url: @dog['message'], message: @breed_name }) if @dog['status'] == 'success' %>
+
+<%= turbo_stream.update(:message, partial: 'message', locals: message_locals(@dog)) %>

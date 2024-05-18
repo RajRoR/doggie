@@ -6,7 +6,7 @@ class DogsController < ApplicationController
 
   # POST /fetch
   def fetch
-    @url = DogService.new(breed_name).call['message']
+    @dog = DogService.new(breed_name).call
   end
 
   private

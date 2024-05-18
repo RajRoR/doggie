@@ -12,7 +12,7 @@ describe 'Dogs', type: :request do
 
   describe 'GET /fetch' do
     it 'returns http success' do
-      get '/dogs/fetch?breed=akita'
+      get '/dogs/fetch.turbo_stream/?breed=akita'
       expect(response).to have_http_status(:success)
     end
   end
