@@ -13,7 +13,7 @@ describe DogService do
   subject(:dog_service) { DogService.new(breed) }
 
   before do
-    uri = URI("#{described_class::BASE_URL}/breed/#{breed}/images/random")
+    uri = URI("#{described_class::BASE_URL}/breed/#{breed.split.reverse.join('/')}/images/random")
 
     allow(Net::HTTP).to receive(:get_response).with(uri).and_return(instance_double(Net::HTTPOK, body: body.to_json))
   end
@@ -25,6 +25,22 @@ describe DogService do
 
     it 'returns URL' do
       expect(dog_service.call['message']).to match(%r{https://images.dog.ceo/breeds/#{breed}/.*\.jpg})
+    end
+
+    context 'when breed name has spaces' do
+      let(:breed) { 'Shepherd australian' }
+      let(:body)  do
+        {
+          message: 'https://images.dog.ceo/breeds/australian-shepherd/pepper.jpg',
+          status: 'success'
+        }
+      end
+
+      it 'returns URL when a valid breed name has space' do
+        expect(
+          dog_service.call['message']
+        ).to match(%r{https://images.dog.ceo/breeds/#{breed.downcase.split.reverse.join('-')}/.*\.jpg})
+      end
     end
   end
 
