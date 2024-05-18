@@ -12,5 +12,14 @@ describe DogsHelper, type: :helper do
                                            tw_class: 'text-inherit'
                                          })
     end
+
+    it 'returns correct locals for erroneous response hash' do
+      msg = 'Oops!'
+
+      expect(message_locals({
+                              'status' => 'error',
+                              'message' => msg
+                            })).to eq({ msg: "🙅 #{msg}", tw_class: 'text-red-700' })
+    end
   end
 end
