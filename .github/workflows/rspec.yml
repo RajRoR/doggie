@@ -33,6 +33,9 @@ jobs:
           bundle install --jobs 4 --retry 3
           gem install --default -v0.6.0 error_highlight
 
+      - name: Keep `browserslist` upto date
+          run: npx update-browserslist-db@latest
+
       - name:  Precompile Assets
         run: bundle exec rake assets:precompile
 
