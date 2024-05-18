@@ -1,0 +1,27 @@
+name: Deploy to Railway
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  rspec:
+    uses: ./.github/workflows/rspec.yml
+  rubocop:
+    uses: ./.github/workflows/rubocop.yml
+  deploy:
+    runs-on: ubuntu-latest
+    needs: [rspec, rubocop]
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install Railway
+        run: bash <(curl -fsSL cli.new)
+
+      - name: Deploy
+        run: railway up -c -s doggie -e production
+        env:
+          RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}

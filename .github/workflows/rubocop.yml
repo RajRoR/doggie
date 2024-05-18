@@ -1,12 +1,11 @@
 name: RuboCop
 
 on:
+  workflow_call: null
   push:
     branches:
-      - main
-  pull_request:
-    branches:
-      - main
+      - '*'
+      - '!main'
 
 jobs:
   rubocop:
