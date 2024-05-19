@@ -65,7 +65,7 @@ https://doggie-production.up.railway.app/
 
 ## Usage
 
-1. Enter the name of the dog breed in the "Breed" input field.
+1. Enter the name of the dog breed in the "Breed" input field. _E.g.: African, French Bulldog, Husky, etc._
 2. Click the "Surprise Me!" button.
 3. An image of the specified dog breed will be displayed to the right of the form, along with the breed name.
 
@@ -81,11 +81,13 @@ It automatically deploys whenever a new commit is pushed or merged into the `mai
    - Implement fuzzy-matching to make the system more intelligent and improve user experience.
 3. **Beautify HTML Validation Messages**
    - Enhance HTML validation messages or replace them with custom designs.
-4. **Introduce Database and Table for Breeds**
+4. **Dynamic Image Dimensions**
+   - Handling of image dimensions, especially for images with non-standard dimensions.
+5. **Introduce Database and Table for Breeds**
    - Create a database and table to store and query available breeds.
    - Develop a rake task to fetch and store/update the table periodically or as needed using data
      from the [Breeds List](https://dog.ceo/api/breeds/list) API.
    - Add a cron job to run this rake task periodically.
    - Use the breeds list data to validate input breed values before making the API call.
-5. **Use Custom Validators, Concerns, etc.**
+6. **Use Custom Validators, Concerns, etc.**
 
