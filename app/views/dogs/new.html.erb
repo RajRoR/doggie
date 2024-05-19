@@ -8,6 +8,8 @@
         <div class='flex items-center border-b border-teal-500 py-2'>
           <%= f.hidden_field :format, value: :turbo_stream %>
           <%= f.text_field :breed, autofocus: true, required: true, placeholder: 'Enter a breed', 'aria-label': 'Breed',
+                           pattern: '^\w+\s+\w+\s*$|^\w+\s*$', oninput: "setCustomValidity('')",
+                           oninvalid: "this.setCustomValidity('Please enter a valid Breed Name')",
                            class: 'appearance-none bg-transparent border-none outline-none w-full text-gray-700
                                     mr-3 py-1 px-2 leading-tight focus:outline-none font-mono focus:ring-transparent' %>
           <%= f.submit 'Surprise Me!', class: 'flex-shrink-0 bg-teal-500 hover:bg-teal-700 border-teal-500
