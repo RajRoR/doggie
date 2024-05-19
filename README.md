@@ -46,7 +46,8 @@ https://doggie-production.up.railway.app/
 ## Setup Instructions
 
 1. **Install Ruby**
-   Follow the instructions here: https://www.ruby-lang.org/en/documentation/installation/
+   Follow the instructions to install Ruby 3.1.3: https://www.ruby-lang.org/en/documentation/installation/
+   You can use `Dockerfile` as well to build the environment. 
 
 2. **Clone the Repository:**
    ```bash
