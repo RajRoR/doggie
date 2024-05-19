@@ -65,7 +65,7 @@ https://doggie-production.up.railway.app/
 
 ## Usage
 
-1. Enter the name of the dog breed in the "Breed" input field. _E.g.: African, French Bulldog, Husky, etc._
+1. Enter the name of the dog breed in the "Breed" input field. **_E.g.: African, French Bulldog, Husky, etc._**
 2. Click the "Surprise Me!" button.
 3. An image of the specified dog breed will be displayed to the right of the form, along with the breed name.
 
