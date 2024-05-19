@@ -83,8 +83,9 @@ It automatically deploys whenever a new commit is pushed or merged into the `mai
    - Enhance HTML validation messages or replace them with custom designs.
 4. **Introduce Database and Table for Breeds**
    - Create a database and table to store and query available breeds.
-   - Develop a rake task to fetch and store/update the table periodically or as needed using data from the [Breeds List](https://dog.ceo/api/breeds/list) API.
+   - Develop a rake task to fetch and store/update the table periodically or as needed using data
+     from the [Breeds List](https://dog.ceo/api/breeds/list) API.
    - Add a cron job to run this rake task periodically.
    - Use the breeds list data to validate input breed values before making the API call.
-5. **Use Custom Validators and Concerns**
+5. **Use Custom Validators, Concerns, etc.**
 
