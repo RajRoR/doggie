@@ -45,23 +45,30 @@ https://doggie-production.up.railway.app/
 
 ## Setup Instructions
 
-1. **Clone the Repository:**
+1. **Install Ruby**
+   Follow the instructions here: https://www.ruby-lang.org/en/documentation/installation/
+
+2. **Clone the Repository:**
    ```bash
    git clone https://github.com/RajRoR/doggie.git
    cd doggie
 
-2. **Install Dependencies**
+3. **Install Dependencies**
    ```bash
    bundle install
    ```
 
-3. **Start Server**
+4. **Start Server**
    ```bash
    ./bin/dev
    ```
-4. Access the Application:
+5. Access the Application:
    Open your browser and navigate to http://localhost:3000
 
+6. Run RSpec Tests (optional)
+   ```bash
+   rspec spec
+   ```
 
 ## Usage
 
@@ -90,4 +97,5 @@ It automatically deploys whenever a new commit is pushed or merged into the `mai
    - Add a cron job to run this rake task periodically.
    - Use the breeds list data to validate input breed values before making the API call.
 6. **Use Custom Validators, Concerns, etc.**
+7. **Higher Test Coverage, e.g. adding controller specs**
 
