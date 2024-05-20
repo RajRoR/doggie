@@ -98,5 +98,5 @@ It automatically deploys whenever a new commit is pushed or merged into the `mai
    - Add a cron job to run this rake task periodically.
    - Use the breeds list data to validate input breed values before making the API call.
 6. **Use Custom Validators, Concerns, etc.**
-7. **Higher Test Coverage, e.g. adding controller specs**
+7. **Higher Test Coverage**
 
