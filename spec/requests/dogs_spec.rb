@@ -60,5 +60,29 @@ describe 'Dogs', type: :request do
       # When input breed name is blank
       it_behaves_like 'name validation error', ''
     end
+
+    context 'API response' do
+      let(:breed) { 'invalid breed' }
+      let(:body)  do
+        {
+          message: 'Breed not found (master breed does not exist)',
+          status: 'error'
+        }
+      end
+
+      before do
+        uri = URI("#{DogService::BASE_URL}/breed/#{breed.split.reverse.join('/')}/images/random")
+
+        allow(Net::HTTP).to receive(:get_response).with(uri).and_return(
+          instance_double(Net::HTTPOK, body: body.to_json)
+        )
+      end
+
+      it "returns 'breed not found' error" do
+        get path, params: { breed: }
+
+        expect(response.body).to include('Breed not found (master breed does not exist)')
+      end
+    end
   end
 end
