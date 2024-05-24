@@ -37,11 +37,14 @@ Design a web form with the following features:
 - **Frontend:** Tailwind, Hotwire
 - **API:** [Dog API](https://dog.ceo/dog-api/)
 - **Version Control:** Git
-- **Hosting:** [Railway](https://railway.app/)
+- **Hosting:** [Render](https://onrender.com)
 
 ## Hosted App
 
-https://doggie-production.up.railway.app/
+https://doggie-fb2k.onrender.com/
+
+Please expect some delay in the initial response. As this is a free instance, it may spin down during
+periods of inactivity, potentially causing delays of 50 seconds or more for requests.
 
 ## Setup Instructions
 
