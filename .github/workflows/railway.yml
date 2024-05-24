@@ -1,3 +1,5 @@
+# Disabled in GitHub
+# https://github.com/RajRoR/doggie/actions/workflows/railway.yml
 name: Deploy to Railway
 
 on:
